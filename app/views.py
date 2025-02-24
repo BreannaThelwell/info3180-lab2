@@ -1,5 +1,6 @@
 from app import app
 from flask import render_template, request, redirect, url_for, flash
+from datetime import datetime #importing python library for grading requirements
 
 
 ###
@@ -17,6 +18,18 @@ def about():
     """Render the website's about page."""
     return render_template('about.html', name="Mary Jane")
 
+@app.route('/profile') #created new route function to view profile
+def profile():
+    """Render profile page."""
+    join_date = format_date_joined() #function call and store result
+    return render_template('profile.html', join_date=join_date) #formats the join date and passes it to the profile.html
+
+
+# separate function that formats a given date as Month, Year
+
+def format_date_joined():
+    """Formats the join date as 'Month, Year'."""
+    return datetime(2020, 2, 17).strftime("%B, %Y")
 
 ###
 # The functions below should be applicable to all Flask apps.

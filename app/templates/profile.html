@@ -1,0 +1,34 @@
+<!--customized profile html file-->
+
+{% extends 'base.html' %} <!--extends base.html-->
+
+{% block main %} <!--main block-->
+<div class="profile-container">
+    <div class="profile-header">
+        <div class=" profile banner"></div> <!--background section-->
+        <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Profile Picture" class="profile-pic"> <!--profile photo-->
+        <h2>Breanna Thelwell</h2> <!--full name-->
+        <p class="username">@bthelwell</p> <!--username-->
+        <p class="location">Montego Bay, Jamaica</p> <!--location-->
+        <p class="join-date">Joined {{ join_date }}</p> <!--date joined-->
+    </div>
+    <div class="profile-bio"> <!--profile bio-->
+        <p>A young talented woman in the field of website design and development.</p>
+    </div>
+    <div class="profile-stats">
+        <div class="stat">
+            <h3>6</h3>
+            <p>Posts</p> <!--number of posts-->
+        </div>
+        <div class="stat">
+            <h3>150</h3>
+            <p>Following</p> <!--number of following-->
+        </div>
+        <div class="stat">
+            <h3>300</h3>
+            <p>Followers</p> <!--number of followers-->
+        </div>
+    </div>
+    <button class="follow-btn">Follow</button> <!--follow button-->
+</div>
+{% endblock %} <!--main block-->
